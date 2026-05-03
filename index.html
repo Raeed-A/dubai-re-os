@@ -26916,7 +26916,15 @@ const supabase = window.supabase.createClient(
   "https://sglxodqzolfmukgxgyej.supabase.co",
   "sb_publishable_XXXXXXXXXXXXXXXX"
 );
-);
+  async function testInsert() {
+  const { data, error } = await supabase
+    .from("projects")
+    .insert([{ name: "My First Project 🔥" }]);
+
+  console.log("DATA:", data);
+  console.log("ERROR:", error);
+}
+testInsert();
 </script>
 </body>
 </html>
